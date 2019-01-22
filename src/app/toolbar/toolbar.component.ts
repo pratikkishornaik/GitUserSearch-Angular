@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
+import { UserDetails } from '../userDetails';
+import { UserDetailsComponent } from '../user-details/user-details.component';
+import { UserResult } from '../responseInterface';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,14 +12,18 @@ import { UserService } from '../user.service';
 export class ToolbarComponent implements OnInit {
 
   userName: string;
+  users: UserDetails[];
 
-  constructor(private UserService: UserService) { }
+  @Input() userDetails: UserDetailsComponent;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
   searchUsers() {
-    this.UserService.getUserName(this.userName)
+    this.userService.getUserName(this.userName);
+    this.userDetails.callUserApi();
   }
 
 }

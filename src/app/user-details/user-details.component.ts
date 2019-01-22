@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { UserResult } from '../responseInterface';
+import { UserDetails } from '../userDetails';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  userArray: any;
+  users: UserDetails[];
 
-  ngOnInit() {
+  constructor(private userService: UserService) { }
+
+  callUserApi() {
+    this.userService.callUserSearchApi().subscribe((user: UserResult) => {
+      this.users = user.items;
+      console.log(this.users);
+    });
   }
+
+  ngOnInit() { }
 
 }

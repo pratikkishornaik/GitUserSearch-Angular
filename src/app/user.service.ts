@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
+import { apiUrl } from './constants/apiUrl';
+import { UserDetails } from './userDetails';
+import { HttpClient } from "@angular/common/http";
+import { UserResult } from './responseInterface';
 
 @Injectable({
   providedIn: 'root'
 })
 
+
 export class UserService {
 
-  userName: string
+  userName: string;
+  userArray: UserResult;
 
-  constructor() { }
-
+  constructor(private httpClient: HttpClient) { }
 
   getUserName(userName) {
-    alert(userName);
-
+    this.userName = userName;
   }
 
+  callUserSearchApi() {
+    return this.httpClient.get(apiUrl.searchUserUrl + this.userName)
+  }
 
 }

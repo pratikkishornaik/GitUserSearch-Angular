@@ -1,13 +1,14 @@
-<mat-card class="cards">
-  <div class="content-wrapper">
-    <div>
-      image
-    </div>
-    <div>
-      <h4>NAME</h4>
-      <label>Profile:</label><span>Profile Links</span>
+<div *ngFor="let user of users">
+  <mat-card class="cards">
+    <div class="content-wrapper">
+      <div>
+        <img class="image" src={{user.avatar_url}} />
 
+      </div>
+      <div>
+        <h4>{{user.login}}</h4>
+        <label>Profile: </label> <a href={{user.url}} target="blank">{{user.url}}</a>
+      </div>
     </div>
-  </div>
-
-</mat-card>
+  </mat-card>
+</div>

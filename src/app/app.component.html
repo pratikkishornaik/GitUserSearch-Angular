@@ -1,7 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-toolbar></app-toolbar>
+
+<app-toolbar [userDetails]="userDetails"></app-toolbar>
+
 <h1>GIT Search API</h1>
+
 <div class="cardscontainer">
-    <app-user-details></app-user-details>
+    <app-user-details #userDetails></app-user-details>
 </div>
+
 <router-outlet></router-outlet>
