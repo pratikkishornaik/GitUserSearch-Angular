@@ -5,7 +5,6 @@
       {{sortType.value}}
     </mat-option>
   </mat-select>
-  <p><span>You selected: </span><b>{{selectedDay}}</b></p>
   <form name="searchGitUser">
     <input class="inputBox" placeholder="User Name" [(ngModel)]="userName" name="searchGitUser">
     <button type="submit" mat-raised-button class="searchbutton" (click)="searchUsers()">Search</button>
