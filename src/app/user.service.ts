@@ -9,11 +9,12 @@ import { UserResult } from './responseInterface';
   providedIn: 'root'
 })
 
-
 export class UserService {
 
   userName: string;
   userArray: UserResult;
+  per_page = 5;
+  page_no = 0;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,8 +22,14 @@ export class UserService {
     this.userName = userName;
   }
 
+  updatePageAttr(pageAttr) {
+    this.per_page = pageAttr.pageSize;
+    this.page_no = pageAttr.pageIndex;
+  }
+
+
   callUserSearchApi() {
-    return this.httpClient.get(apiUrl.searchUserUrl + this.userName)
+    return this.httpClient.get(apiUrl.searchUserUrl + this.userName + "&page=" + this.page_no + "&per_page=" + this.per_page)
   }
 
   getUserRepo(username) {

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
 import { UserResult } from '../responseInterface';
 import { UserDetails } from '../userDetails';
+import { PaginationComponent } from '../pagination/pagination.component';
 
 @Component({
   selector: 'app-user-details',
@@ -9,6 +10,8 @@ import { UserDetails } from '../userDetails';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
+
+  @Input() pagination: PaginationComponent;
 
   users: UserDetails[];
   repos: any;
@@ -19,7 +22,8 @@ export class UserDetailsComponent implements OnInit {
   callUserApi() {
     this.userService.callUserSearchApi().subscribe((user: UserResult) => {
       this.users = user.items;
-      console.log(this.users);
+      console.log(this.users, user);
+      this.pagination.pageSizeUpdated(this.users.length, Math.ceil(user.total_count / this.users.length))
     });
   }
 

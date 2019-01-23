@@ -9,6 +9,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RepoDetailsComponent } from './repo-details/repo-details.component';
     ToolbarComponent,
     UserDetailsComponent,
     RepoDetailsComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

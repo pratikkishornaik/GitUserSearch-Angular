@@ -4,7 +4,8 @@ import {
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +16,8 @@ const MatComponents = [
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
 
 ]
 @NgModule({
