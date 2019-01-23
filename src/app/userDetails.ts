@@ -6,4 +6,6 @@ export class UserDetails {
     profile: string;
     rank: number;
     repos: any;
+    score: number;
+    showRepo: boolean
 }

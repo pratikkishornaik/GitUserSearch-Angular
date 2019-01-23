@@ -10,8 +10,9 @@ import { UserDetails } from '../userDetails';
 })
 export class UserDetailsComponent implements OnInit {
 
-  userArray: any;
   users: UserDetails[];
+  repos: any;
+  clickedIndex;
 
   constructor(private userService: UserService) { }
 
@@ -20,6 +21,39 @@ export class UserDetailsComponent implements OnInit {
       this.users = user.items;
       console.log(this.users);
     });
+  }
+
+
+  showRepos(username, i) {
+    if (!this.users[i].showRepo) {
+      this.userService.getUserRepo(username).subscribe((repo) => {
+        this.users[i].repos = repo;
+        this.users[i].showRepo = true;
+        this.clickedIndex = i;
+        console.log(repo);
+      })
+    }
+    this.users[i].showRepo = !this.users[i].showRepo;
+  }
+
+  sortUsers(type) {
+
+    switch (type) {
+
+      case "SBN":
+        {
+          this.users = this.users.sort();
+          break;
+        }
+
+      case "SBS":
+        {
+          this.users = this.users.sort((a, b) => {
+            return b.score - a.score;
+          })
+          break;
+        }
+    }
   }
 
   ngOnInit() { }

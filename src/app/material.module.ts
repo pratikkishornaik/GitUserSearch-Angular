@@ -3,7 +3,8 @@ import {
     MatCheckboxModule,
     MatToolbarModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -13,7 +14,9 @@ const MatComponents = [
     MatCheckboxModule,
     MatToolbarModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
+
 ]
 @NgModule({
     imports: MatComponents,

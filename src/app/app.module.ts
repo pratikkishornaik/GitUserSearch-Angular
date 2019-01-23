@@ -8,11 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RepoDetailsComponent } from './repo-details/repo-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RepoDetailsComponent,
   ],
   imports: [
     BrowserModule,

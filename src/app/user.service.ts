@@ -25,4 +25,8 @@ export class UserService {
     return this.httpClient.get(apiUrl.searchUserUrl + this.userName)
   }
 
+  getUserRepo(username) {
+    return this.httpClient.get(apiUrl.searchRepo + username + "/repos")
+  }
+
 }

@@ -1,0 +1,13 @@
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+
+    <tr *ngFor="let repo of userRepo">
+      <td>{{repo.name}}</td>
+      <td>{{repo.language}}</td>
+    </tr>
+  </table>
+</div>

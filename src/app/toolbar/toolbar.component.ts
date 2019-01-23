@@ -13,12 +13,25 @@ export class ToolbarComponent implements OnInit {
 
   userName: string;
   users: UserDetails[];
+  sort = [{
+    type: "SBN",
+    value: "Sort By Name"
+  },
+  {
+    type: "SBS",
+    value: "Sort By Score"
+  }
+  ]
 
   @Input() userDetails: UserDetailsComponent;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+  }
+
+  sortData(event) {
+    this.userDetails.sortUsers(event.value);
   }
 
   searchUsers() {

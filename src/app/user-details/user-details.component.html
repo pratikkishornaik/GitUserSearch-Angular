@@ -1,14 +1,27 @@
-<div *ngFor="let user of users">
+<div *ngFor="let user of users; let i=index">
   <mat-card class="cards">
     <div class="content-wrapper">
       <div>
         <img class="image" src={{user.avatar_url}} />
 
       </div>
-      <div>
-        <h4>{{user.login}}</h4>
-        <label>Profile: </label> <a href={{user.url}} target="blank">{{user.url}}</a>
+      <div class="user-info">
+        <h3>{{user.login}}</h3>
+        <div>
+          <label>Profile: </label> <a href={{user.html_url}} target="blank">{{user.html_url}}</a>
+        </div>
+        <div style="margin-top:10px;">
+          <label>Score: </label> <span target="blank">{{user.score}}</span>
+        </div>
       </div>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button class="searchbutton" (click)="showRepos(user.login,i)">{{clickedIndex == i &&
+        user.showRepo
+        ? "Collapse": "Show Repos"}}</button>
+    </div>
+    <div *ngIf="user.showRepo && user.repos && user.repos.length && clickedIndex == i">
+      <app-repo-details [userRepo]="user.repos"></app-repo-details>
     </div>
   </mat-card>
 </div>
