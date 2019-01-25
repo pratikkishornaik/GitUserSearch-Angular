@@ -1,0 +1,35 @@
+.cards {
+  width: 700px;
+  margin: 15px auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h3 {
+  text-align: center;
+}
+
+.user-info {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.content-wrapper {
+  padding: 10px;
+  // justify-content: space-between;
+}

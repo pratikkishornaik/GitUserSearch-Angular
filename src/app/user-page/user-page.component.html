@@ -1,0 +1,27 @@
+<mat-card class="cards">
+  <div class="content-wrapper">
+    <div class="image-container">
+      <img class="image" src="#" />
+    </div>
+    <h3>NAME</h3>
+    <div class="user-info">
+      <div>
+        <label>Profile: </label> <a href="#" target="blank">Profile</a>
+      </div>
+      <div>
+        <label>Score: </label> <span target="blank">Score</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button class="searchbutton" (click)="showRepos(user.login,i)">Show Repo</button>
+  </div>
+  <div>
+    <app-repo-details></app-repo-details>
+  </div>
+</mat-card>
+
+<p>
+  user-page works!
+</p>

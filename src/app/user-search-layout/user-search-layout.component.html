@@ -1,0 +1,6 @@
+<app-toolbar [userDetails]="userDetails"></app-toolbar>
+
+<div class="cardscontainer">
+  <app-user-details #userDetails [pagination]="paginationComp"></app-user-details>
+</div>
+<app-pagination #paginationComp [userDetails]="userDetails"></app-pagination>

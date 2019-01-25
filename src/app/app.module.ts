@@ -10,6 +10,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { UserSearchLayoutComponent } from './user-search-layout/user-search-layout.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     UserDetailsComponent,
     RepoDetailsComponent,
     PaginationComponent,
+    UserPageComponent,
+    UserSearchLayoutComponent,
   ],
   imports: [
     BrowserModule,
