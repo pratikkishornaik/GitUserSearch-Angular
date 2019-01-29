@@ -8,12 +8,13 @@ const routes: Routes = [
     path: 'search',
     component: UserSearchLayoutComponent,
   },
-  {
-    path: 'user/:id',
-    component: UserPageComponent,
-  },
   { path: '', redirectTo: '/search', pathMatch: 'full' },
 ];
+
+// {
+//   path: 'user/:id',
+//   component: UserPageComponent,
+// },
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
