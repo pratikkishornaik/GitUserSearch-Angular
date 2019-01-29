@@ -6,7 +6,7 @@
 
       </div>
       <div class="user-info">
-        <h3>{{user.login}}</h3>
+        <h3><a routerLink="/user/{{user.login}}">{{user.login}}</a></h3>
         <div>
           <label>Profile: </label> <a href={{user.html_url}} target="blank">{{user.html_url}}</a>
         </div>

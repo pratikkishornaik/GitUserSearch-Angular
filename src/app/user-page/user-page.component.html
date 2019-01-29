@@ -1,27 +1,23 @@
 <mat-card class="cards">
   <div class="content-wrapper">
     <div class="image-container">
-      <img class="image" src="#" />
+      <img class="image" src={{userInfo.avatar_url}} />
     </div>
-    <h3>NAME</h3>
+    <h3>{{userInfo.login}}</h3>
     <div class="user-info">
       <div>
-        <label>Profile: </label> <a href="#" target="blank">Profile</a>
+        <label>Profile: </label> <a href="#" target="blank">{{userInfo.html_url}}</a>
       </div>
       <div>
-        <label>Score: </label> <span target="blank">Score</span>
+        <label>Score: </label> <span target="blank">{{userInfo.score}}</span>
       </div>
     </div>
   </div>
 
   <div class="button-container">
-    <button mat-raised-button class="searchbutton" (click)="showRepos(user.login,i)">Show Repo</button>
+    <button mat-raised-button class="searchbutton" (click)="showRepos(userInfo.login)">Show Repo</button>
   </div>
   <div>
     <app-repo-details></app-repo-details>
   </div>
 </mat-card>
-
-<p>
-  user-page works!
-</p>

@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { UserDetails } from '../userDetails';
 import { UserDetailsComponent } from '../user-details/user-details.component';
 import { UserResult } from '../responseInterface';
+import { select } from '@angular-redux/store';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,15 +12,22 @@ import { UserResult } from '../responseInterface';
 })
 export class ToolbarComponent implements OnInit {
 
+
   userName: string;
+
   users: UserDetails[];
+
   sort = [{
-    type: "SBN",
-    value: "Sort By Name"
+    type: "SBNASC",
+    value: "Sort By Name A-Z"
   },
   {
-    type: "SBS",
-    value: "Sort By Score"
+    type: "SBSASC",
+    value: "Sort By Score Ascending"
+  },
+  {
+    type: "SBSDEC",
+    value: "Sort By Score Descending"
   }
   ]
 

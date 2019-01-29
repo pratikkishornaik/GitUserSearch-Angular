@@ -12,6 +12,8 @@ import { RepoDetailsComponent } from './repo-details/repo-details.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserSearchLayoutComponent } from './user-search-layout/user-search-layout.component';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { IAppState, rootReducer, INITIAL_STATE } from './store';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,16 @@ import { UserSearchLayoutComponent } from './user-search-layout/user-search-layo
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(ngRedux: NgRedux<IAppState>) {
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  }
+
+}

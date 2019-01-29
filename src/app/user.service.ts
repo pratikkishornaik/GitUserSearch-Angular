@@ -5,6 +5,7 @@ import { UserDetails } from './userDetails';
 import { HttpClient } from "@angular/common/http";
 import { UserResult } from './responseInterface';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +27,16 @@ export class UserService {
     this.per_page = pageAttr.pageSize;
     this.page_no = pageAttr.pageIndex;
   }
+
+  // callUserSearchApi(): any {
+  //   this.httpClient.get(apiUrl.searchUserUrl + this.userName + "&page=" + this.page_no + "&per_page=" + this.per_page)
+  //     .subscribe((user: any) => {
+  //       this.ngRedux.dispatch({ type: ACTION_TYPES.ADD_USER, payload: user });
+  //       console.log(user);
+  //       this.userArray = user
+  //       return(this.userArray);
+  //     })
+  // }
 
 
   callUserSearchApi() {
