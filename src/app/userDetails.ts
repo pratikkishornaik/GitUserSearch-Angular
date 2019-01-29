@@ -7,5 +7,8 @@ export class UserDetails {
     rank: number;
     repos: any;
     score: number;
-    showRepo: boolean
+    showRepo: boolean;
+    avatar_url: string;
+    login: string;
+    html_url: string;
 }
